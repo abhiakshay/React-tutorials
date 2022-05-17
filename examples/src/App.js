@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import { Link, Outlet } from 'react-router-dom';
 import './App.css';
 
 function App() {
@@ -6,18 +7,29 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+        <nav
+          style={{
+            borderBottom: 'solid 1px',
+            padding: '1rem',
+            display: 'flex',
+            justifyContent: 'flex-start',
+            flex: 1,
+            color: 'fff',
+          }}
         >
-          Learn React
-        </a>
+          <Link to="/Dashboard">
+            <button>Dashboard</button>
+          </Link>
+          <Link to="/List">
+            <button>List</button>
+          </Link>
+          <Link to="/About">
+            <button>About</button>
+          </Link>
+        </nav>
       </header>
+      <h1>Welcome to our tutorials</h1>
+      <Outlet />
     </div>
   );
 }
